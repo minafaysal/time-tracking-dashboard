@@ -132,3 +132,17 @@
     margin-inline-start: 0px;
   }
 }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding-inline: 200px;
+  width: 100%;
+  i {
+    font-size: 50px;
+    font-weight: 900;
+    color: #ffff;
+  }
+}

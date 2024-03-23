@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../shared/services/api.service';
 import { takeUntil } from 'rxjs';
 import { ComponentBase } from '../shared/base/common.base';
+import { bestSellerItem } from '../shared/models/common.models';
 
 @Component({
   selector: 'app-best-sales-item',
@@ -9,7 +10,8 @@ import { ComponentBase } from '../shared/base/common.base';
   styleUrls: ['./best-sales-item.component.scss'],
 })
 export class BestSalesItemComponent extends ComponentBase implements OnInit {
-  bestSeller: any = [];
+  bestSeller: bestSellerItem[] = [];
+  isLoading: boolean = true;
   constructor(private apiService: ApiService) {
     super();
   }
@@ -19,6 +21,7 @@ export class BestSalesItemComponent extends ComponentBase implements OnInit {
       .pipe(takeUntil(this.destroy$))
       .subscribe((res) => {
         this.bestSeller = res;
+        this.isLoading = false;
       });
   }
 

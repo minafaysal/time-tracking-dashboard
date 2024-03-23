@@ -1,5 +1,13 @@
-<div class="bestSellingContainer">
-  <div class="bestSellingItem" *ngFor="let item of bestSeller; let i = index" [ngStyle]="{ 'background-color': getRandomColor() }">
+<div *ngIf="isLoading" class="spinner">
+  <i class="fas fa-spinner fa-spin"></i>
+</div>
+
+<div *ngIf="!isLoading" class="bestSellingContainer">
+  <div
+    class="bestSellingItem"
+    *ngFor="let item of bestSeller; let i = index"
+    [ngStyle]="{ 'background-color': getRandomColor() }"
+  >
     <div class="itemDetails">
       <div class="itemHeader">
         <h2 class="category">{{ item.category }}</h2>
