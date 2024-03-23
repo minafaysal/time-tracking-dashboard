@@ -1,8 +1,26 @@
+@import "../../src/assets/theme/variables.scss";
+
 * {
-  background-color: #0e1323;
+  background-color: $background-color;
 }
 .homePage {
   display: flex;
-  height: calc(100Vh - 50px);
+  height: fit-content;
+  min-height: calc(100vh - 60px);
   padding-top: 120px;
+  background-color: $background-color;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  app-side-bar {
+    width: 100%;
+    margin-inline-start: 0px;
+    display: flex;
+    justify-content: center;
+  }
 }

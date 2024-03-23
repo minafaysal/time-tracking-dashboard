@@ -1,42 +1,69 @@
+@import "../../assets/theme/variables.scss";
 .sidBar {
-  background-color: #1c204b;
+  background-color: $sidBar-background-color;
   width: 13.3%;
   min-width: 330px;
   margin-inline-start: 90px;
   border-radius: 20px;
 
   .sidBar-header {
-    background-color: #5747ea;
+    background-color: $sidBar-header-background-color;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     img {
-      width: 138px;
-      height: 145px;
+      width: $sidBar-header-img-width;
+      height: $sidBar-header-img-height;
       margin-top: 32px;
       align-self: center;
-      border: 3px solid #ffffff;
-      border-radius: 90px;
+      border: $sidBar-header-img-border;
+      border-radius: $sidBar-header-img-border-radius;
       box-shadow: 4px 7px 8px 0px rgba(0, 0, 0, 0.25);
+
+      @media (max-width: 767px) {
+        width: 64px;
+        height: 64px;
+        border-radius: 32px;
+        margin-bottom: 34px;
+        margin-right: 20px;
+        margin-left: 32px;
+      }
     }
-    p {
-      margin-top: 32px;
+
+    .sidebar-header-info {
       margin-inline-start: 23px;
-      margin-bottom: 10px;
-      color: #bbc0ff;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 17.78px;
+
+      p {
+        margin-top: 32px;
+        margin-bottom: 10px;
+        color: #bbc0ff;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 17.78px;
+      }
+
+      h2 {
+        letter-spacing: 12px;
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 47.4px;
+        color: #ffffff;
+        padding-bottom: 19px;
+        max-width: 150px;
+
+        @media (max-width: 767px) {
+          font-size: 24px;
+          line-height: 28.44px;
+          letter-spacing: 0px;
+        }
+      }
     }
-    h2 {
-      letter-spacing: 12px;
-      font-weight: 300;
-      line-height: 47.4px;
-      font-size: 40px;
-      color: #ffffff;
-      padding-bottom: 19px;
-      margin-inline-start: 23px;
+
+    @media (max-width: 767px) {
+      flex-direction: row;
+      align-items: center;
     }
   }
 
@@ -51,12 +78,25 @@
       cursor: pointer;
       margin-top: 10px;
       margin-bottom: 20px;
-      font-size: 18px;
-      line-height: 21.33px;
       font-weight: 400;
+      line-height: 21.33px;
+      font-size: 18px;
+
       &:nth-child(2) {
         color: #ffffff;
       }
     }
+
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-bottom: 0px;
+      margin-inline-start: 0px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    margin-inline-start: 0px;
   }
 }

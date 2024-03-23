@@ -1,3 +1,5 @@
+@import "../../assets/theme/variables.scss";
+
 .bestSellingContainer {
   display: flex;
   flex-wrap: wrap;
@@ -5,85 +7,116 @@
 
   .bestSellingItem {
     color: #ffffff;
-    width: calc(20% - 30px);
+    width: $bestSellingItem-width;
+    min-width: $bestSellingItem-min-width;
     margin-inline: 15px;
     margin-bottom: 33px;
-    padding-top: 42px;
-    border-radius: 15px;
+    padding-top: $bestSellingItem-padding;
+    border-radius: $bestSellingItem-border-radius;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 15px;
 
     .itemDetails {
-      background-color: #1c204b;
-      border-radius: 15px;
-    }
+      background-color: $bestSellingContainer-background-color;
+      border-radius: $bestSellingItem-border-radius;
+      padding-inline-start: $bestSellingItem-details-padding;
 
-    .itemHeader {
-      padding-top: 37px;
-      display: flex;
-      justify-content: space-between;
-      padding-inline-start: 30px;
+      .itemHeader {
+        padding-top: 37px;
+        display: flex;
+        justify-content: space-between;
 
-      .category {
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 21.33px;
-        margin-bottom: 24px;
+        .category {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 21.33px;
+          margin-bottom: 25px;
+        }
+
+        i {
+          cursor: pointer;
+          padding-inline-end: 17px;
+          font-size: 23px;
+          margin-right: 10px;
+        }
       }
 
-      i {
-        cursor: pointer;
-        padding-inline-end: 17px;
-        font-size: 23px;
-        margin-right: 10px;
-      }
-    }
-
-    .price {
-      font-weight: 300;
-      font-size: 39px;
-      line-height: 46.22px;
-      margin-bottom: auto;
-      margin-bottom: 12px;
-      padding-inline-start: 30px;
-    }
-
-    .details {
-      display: flex;
-      align-items: center;
-      margin-bottom: auto;
-      padding-bottom: 24px;
-      padding-inline-end: 17px;
-      padding-inline-start: 30px;
-
-      .title {
-        color: #bbc0ff;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 14.22px;
-        margin-bottom: auto;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-
-      .storeCount {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 14.22px;
-        margin-left: 10px;
-        margin-bottom: auto;
+      .itemBody {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: space-around;
 
-        p {
-          margin: 0;
+        .price {
+          font-weight: 300;
+          font-size: 39px;
+          line-height: 46.22px;
+          margin-bottom: 12px;
+        }
+
+        .details {
+          display: flex;
+          align-items: center;
+          margin-bottom: auto;
+          padding-bottom: 24px;
+          padding-inline-end: 17px;
+
+          .title {
+            color: #bbc0ff;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14.22px;
+            margin-bottom: auto;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 121px;
+            max-height: 28px;
+          }
+
+          .storeCount {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14.22px;
+            margin-left: 10px;
+            margin-bottom: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            p {
+              margin: 0;
+            }
+
+            @media (max-width: 767px) {
+              display: none;
+            }
+          }
         }
       }
     }
+
+    @media (max-width: 767px) {
+      width: 100%;
+      max-width: 327px;
+      margin-inline: 0;
+      margin-bottom: 20px;
+
+      .itemDetails {
+        padding-inline-start: 24px;
+        .itemBody {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    justify-content: center;
+    margin-top: 39px;
+    margin-inline-start: 0px;
   }
 }
