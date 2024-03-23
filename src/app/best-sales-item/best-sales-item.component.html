@@ -1,22 +1,20 @@
 <div class="bestSellingContainer">
-  <div
-    class="bestSellingItem"
-    *ngFor="let item of bestSeller; let i = index"
-    [ngStyle]="{ 'background-color': getRandomColor() }"
-  >
+  <div class="bestSellingItem" *ngFor="let item of bestSeller; let i = index" [ngStyle]="{ 'background-color': getRandomColor() }">
     <div class="itemDetails">
       <div class="itemHeader">
         <h2 class="category">{{ item.category }}</h2>
         <i class="fas fa-ellipsis-h"></i>
       </div>
-      <p class="price">{{ item.price }} $</p>
-      <div class="details">
-        <p class="title">{{ item.title.substring(0, 28) }}</p>
-        <div class="storeCount">
-          <p>InStore</p>
-          <p>{{ item.rating.count }}</p>
+      <span class="itemBody">
+        <p class="price">{{ item.price }} $</p>
+        <div class="details">
+          <p class="title">{{ item.title }}</p>
+          <div class="storeCount">
+            <p>InStore</p>
+            <p>{{ item.rating.count }}</p>
+          </div>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 </div>
