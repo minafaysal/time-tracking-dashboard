@@ -7,6 +7,8 @@ import { HeaderComponent } from './shared/components/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { BestSalesItemComponent } from './best-sales-item/best-sales-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,7 +18,18 @@ import { HttpClientModule } from '@angular/common/http';
     SideBarComponent,
     BestSalesItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000, 
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      closeButton: true, 
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
