@@ -1,3 +1,8 @@
 * {
   background-color: #0e1323;
 }
+.homePage {
+  display: flex;
+  height: calc(100Vh - 50px);
+  padding-top: 120px;
+}
