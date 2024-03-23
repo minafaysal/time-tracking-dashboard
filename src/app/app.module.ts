@@ -24,10 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 3000, 
-      positionClass: 'toast-top-right',
-      preventDuplicates: true,
-      closeButton: true, 
     }),
   ],
   providers: [],

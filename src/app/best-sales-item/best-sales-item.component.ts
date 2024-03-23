@@ -13,6 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class BestSalesItemComponent extends ComponentBase implements OnInit {
   bestSeller: bestSellerItem[] = [];
   isLoading: boolean = true;
+  itemColors: string[] = [];
   constructor(private apiService: ApiService, private toastr: ToastrService) {
     super();
   }
@@ -25,6 +26,7 @@ export class BestSalesItemComponent extends ComponentBase implements OnInit {
           this.bestSeller = res;
           this.isLoading = false;
           this.toastr.success('API call successful!', 'Success');
+          this.generateItemColors();
         },
         (error) => {
           console.error('API call error:', error);
@@ -34,9 +36,10 @@ export class BestSalesItemComponent extends ComponentBase implements OnInit {
       );
   }
 
-  getRandomColor(): string {
+  generateItemColors(): void {
     const colors = ['#FF8B64', '#55C2E6', '#FF5E7D', '#4BCF82', '#7335D2'];
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex];
+    this.itemColors = this.bestSeller.map(
+      (_, index) => colors[index % colors.length]
+    );
   }
 }
