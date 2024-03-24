@@ -1,9 +1,9 @@
 @import "../../assets/theme/variables.scss";
 .sidBar {
   background-color: $sidBar-background-color;
-  width: 13.3%;
+  // width: 13.3%;
   min-width: 255px;
-  margin-inline-start: 117px;
+  margin-inline-start: 58px;
   border-radius: 20px;
 
   .sidBar-header {
@@ -89,10 +89,10 @@
       &:nth-child(2) {
         color: #ffffff;
       }
-       @media (max-width: 767px) {
-         margin-top: 0px;
-         margin-bottom: 25px;
-       }
+      @media (max-width: 767px) {
+        margin-top: 0px;
+        margin-bottom: 25px;
+      }
     }
 
     @media (max-width: 767px) {
@@ -101,12 +101,25 @@
       justify-content: space-around;
       padding-bottom: 0px;
       margin-inline-start: 0px;
-       margin-top: 24px;
+      margin-top: 24px;
     }
+  }
+
+  @media (min-width: 767px) and (max-width: 1450px) {
+    width: 205px;
+    margin-inline-start: 28px;
+    img {
+      margin-inline: 52px;
+      width: 108px;
+      height: 115px;
+    }
+  }
+  @media (min-width: 1750px) {
+    margin-inline-start: 117px;
   }
 
   @media (max-width: 767px) {
     margin-inline-start: 0px;
-     min-width: 327px;
+    min-width: 327px;
   }
 }
