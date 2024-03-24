@@ -9,7 +9,8 @@
   .bestSellingItem {
     color: #ffffff;
     width: $bestSellingItem-width;
-    min-width: $bestSellingItem-min-width;
+    min-width: 170px;
+    max-width: 255px;
     margin-inline: 15px;
     margin-bottom: 33px;
     padding-top: $bestSellingItem-padding;
@@ -37,6 +38,9 @@
           @media (max-width: 767px) {
             margin-bottom: 15px;
           }
+          @media (min-width: 767px) and (max-width: 1450px) {
+            font-size: 18px;
+          }
         }
 
         i {
@@ -63,6 +67,9 @@
           @media (max-width: 767px) {
             margin-bottom: 20px;
           }
+          @media (min-width: 767px) and (max-width: 1450px) {
+            font-size: 37px;
+          }
         }
 
         .details {
@@ -71,6 +78,7 @@
           margin-bottom: auto;
           padding-bottom: 24px;
           padding-inline-end: 14px;
+          justify-content: space-between;
 
           .title {
             color: #bbc0ff;
@@ -108,6 +116,10 @@
           }
         }
       }
+      @media (min-width: 767px) and (max-width: 1528px) {
+        min-height: 215px;
+        padding-inline-start: 15px;
+      }
     }
 
     @media (max-width: 767px) {
@@ -125,6 +137,9 @@
         }
       }
     }
+  }
+  @media (min-width: 900px) {
+    margin-inline-end: 28px;
   }
 
   @media (max-width: 767px) {
