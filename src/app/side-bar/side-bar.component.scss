@@ -2,8 +2,8 @@
 .sidBar {
   background-color: $sidBar-background-color;
   width: 13.3%;
-  min-width: 330px;
-  margin-inline-start: 90px;
+  min-width: 255px;
+  margin-inline-start: 117px;
   border-radius: 20px;
 
   .sidBar-header {
@@ -107,5 +107,6 @@
 
   @media (max-width: 767px) {
     margin-inline-start: 0px;
+     min-width: 327px;
   }
 }
